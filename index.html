@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Personal - David Guevara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 1rem;
+        }
+
+        header,
+        nav,
+        main,
+        section,
+        footer {
+            margin-bottom: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0077cc;
+        }
+
+        nav a:focus,
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabecera con título principal -->
+    <header>
+        <h1>David Guevara</h1>
+        <p>Estudiante de Ingeniería de Software</p>
+    </header>
+
+    <!-- Navegación principal accesible -->
+    <nav aria-label="Menú principal">
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sección sobre mí con imagen -->
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <article>
+                <p>Soy un joven apasionado por la tecnología, actualmente cursando Ingeniería de Software. Me interesa
+                    el desarrollo web, la inteligencia artificial y la educación digital.</p>
+                <img src="foto-david.jpg" alt="Foto de David Guevara sonriendo frente a su computador">
+            </article>
+        </section>
+
+        <!-- Sección de habilidades -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>HTML5, CSS3 y JavaScript</li>
+                <li>Desarrollo de sitios accesibles y semánticos</li>
+                <li>Control de versiones con Git y GitHub</li>
+            </ul>
+        </section>
+
+        <!-- Formulario de contacto con etiquetas asociadas -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+
+                <br>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje"></textarea>
+
+                <br>
+
+                <button type="submit" aria-label="Enviar formulario de contacto">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 David Guevara. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
