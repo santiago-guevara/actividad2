@@ -2,115 +2,99 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación Personal - David Guevara</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 1rem;
-        }
-
-        header,
-        nav,
-        main,
-        section,
-        footer {
-            margin-bottom: 1.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            gap: 1rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #0077cc;
-        }
-
-        nav a:focus,
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        footer {
-            font-size: 0.9rem;
-            color: #666;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafetería El Buen Café</title>
+    <!-- Se vincula un archivo CSS externo para mantener la separación entre contenido y presentación -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
-    <!-- Cabecera con título principal -->
+
+    <!-- Etiqueta <header> usada para encapsular el encabezado principal de la página -->
     <header>
-        <h1>David Guevara</h1>
-        <p>Estudiante de Ingeniería de Software</p>
+        <h1>Cafetería El Buen Café</h1> <!-- Título principal, etiqueta <h1> única por accesibilidad -->
+
+        <!-- Menú de navegación con atributo aria-label para lectores de pantalla -->
+        <nav aria-label="Navegación principal">
+            <a href="#menu">Menú</a>
+            <a href="#horario">Horario</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
 
-    <!-- Navegación principal accesible -->
-    <nav aria-label="Menú principal">
-        <ul>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-
+    <!-- Contenido principal agrupado en la etiqueta semántica <main> -->
     <main>
-        <!-- Sección sobre mí con imagen -->
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
+
+        <!-- Sección introductoria con un título y una imagen accesible -->
+        <section aria-labelledby="intro">
+            <h2 id="intro">Bienvenidos a El Buen Café</h2>
+            <p>
+                Somos una cafetería artesanal dedicada a ofrecerte los mejores cafés, tés y postres en un ambiente
+                acogedor. Ideal para estudiantes, trabajadores remotos y amantes del café.
+            </p>
+            <!-- Imagen con atributo alt descriptivo para usuarios con lector de pantalla -->
+            <img src="assets/img/cafeteria.jpg" alt="Interior de la cafetería El Buen Café con personas disfrutando su bebida" />
+        </section>
+
+        <!-- Sección del menú con artículos separados por categoría -->
+        <section id="menu" aria-labelledby="menu-title">
+            <h2 id="menu-title">Menú</h2>
+
+            <!-- Cada grupo del menú se encapsula en <article> para mejorar la organización semántica -->
             <article>
-                <p>Soy un joven apasionado por la tecnología, actualmente cursando Ingeniería de Software. Me interesa
-                    el desarrollo web, la inteligencia artificial y la educación digital.</p>
-                <img src="foto-david.jpg" alt="Foto de David Guevara sonriendo frente a su computador">
+                <h3>Bebidas</h3> <!-- Subtítulo del grupo -->
+                <ul>
+                    <li>Café Latte - $6.000</li>
+                    <li>Capuchino - $6.500</li>
+                    <li>Té Chai - $5.500</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Comidas</h3>
+                <ul>
+                    <li>Sándwich de Jamón y Queso - $7.000</li>
+                    <li>Tarta de Zanahoria - $5.000</li>
+                </ul>
             </article>
         </section>
 
-        <!-- Sección de habilidades -->
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <ul>
-                <li>HTML5, CSS3 y JavaScript</li>
-                <li>Desarrollo de sitios accesibles y semánticos</li>
-                <li>Control de versiones con Git y GitHub</li>
-            </ul>
+        <!-- Sección informativa sobre el horario -->
+        <section id="horario" aria-labelledby="horario-title">
+            <h2 id="horario-title">Horario de Atención</h2>
+            <!-- Uso de <strong> para resaltar los días -->
+            <p><strong>Lunes a Viernes:</strong> 7:00 AM - 7:00 PM</p>
+            <p><strong>Sábados y Domingos:</strong> 8:00 AM - 5:00 PM</p>
         </section>
 
-        <!-- Formulario de contacto con etiquetas asociadas -->
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
+        <!-- Sección de contacto con formulario accesible -->
+        <section id="contacto" aria-labelledby="contacto-title">
+            <h2 id="contacto-title">Contacto</h2>
 
-                <br>
+            <!-- Formulario con etiquetas <label> asociadas a cada campo mediante el atributo for -->
+            <!-- Se incluye aria-label para mejorar la comprensión en lectores de pantalla -->
+            <form action="#" method="POST" aria-label="Formulario de contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required />
 
                 <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje"></textarea>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-                <br>
-
-                <button type="submit" aria-label="Enviar formulario de contacto">Enviar</button>
+                <!-- Botón con aria-label para describir mejor su propósito -->
+                <button type="submit" aria-label="Enviar mensaje de contacto">Enviar</button>
             </form>
         </section>
     </main>
 
-    <!-- Pie de página -->
+    <!-- Pie de página con derechos reservados -->
     <footer>
-        <p>&copy; 2025 David Guevara. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Cafetería El Buen Café. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 
 </html>
